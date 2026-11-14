@@ -8,28 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download project files
+      - name: Download Android project
         run: |
-          mkdir -p project/app/src/main/java/com/romskub/nutritionlive
-          mkdir -p project/app/src/main/res/layout
-          mkdir -p project/app/src/main/res/drawable
-          mkdir -p project/app/src/main/res/xml
-          mkdir -p project/app/src/main/res/values
-
-          base="https://headless-rjcepryafyz-romskub-1407.wix-site-host.com"
-
-          curl -fL "$base/settings.gradle" -o project/settings.gradle
-          curl -fL "$base/build.gradle" -o project/build.gradle
-          curl -fL "$base/app/build.gradle" -o project/app/build.gradle
-          curl -fL "$base/app/src/main/AndroidManifest.xml" -o project/app/src/main/AndroidManifest.xml
-          curl -fL "$base/app/src/main/java/com/romskub/nutritionlive/MainActivity.java" -o project/app/src/main/java/com/romskub/nutritionlive/MainActivity.java
-          curl -fL "$base/app/src/main/java/com/romskub/nutritionlive/NutritionWidgetProvider.java" -o project/app/src/main/java/com/romskub/nutritionlive/NutritionWidgetProvider.java
-          curl -fL "$base/app/src/main/res/layout/activity_main.xml" -o project/app/src/main/res/layout/activity_main.xml
-          curl -fL "$base/app/src/main/res/layout/widget_nutrition.xml" -o project/app/src/main/res/layout/widget_nutrition.xml
-          curl -fL "$base/app/src/main/res/drawable/widget_bg.xml" -o project/app/src/main/res/drawable/widget_bg.xml
-          curl -fL "$base/app/src/main/res/xml/nutrition_widget_info.xml" -o project/app/src/main/res/xml/nutrition_widget_info.xml
-          curl -fL "$base/app/src/main/res/values/strings.xml" -o project/app/src/main/res/values/strings.xml
-          curl -fL "$base/app/src/main/res/values/styles.xml" -o project/app/src/main/res/values/styles.xml
+          curl -L --fail -o source.zip "https://271dd665-58ff-4f87-8ec2-919453d21d8e.usrfiles.com/archives/e3fd80_39b8334c6b3344a780193ee0c048d04b.zip"
+          unzip source.zip -d project
 
       - name: Setup Java
         uses: actions/setup-java@v4
