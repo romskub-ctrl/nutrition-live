@@ -10,8 +10,7 @@ jobs:
     steps:
       - name: Download Android project
         run: |
-          curl -L --fail -o source.zip "https://271dd665-58ff-4f87-8ec2-919453d21d8e.usrfiles.com/archives/e3fd80_39b8334c6b3344a780193ee0c048d04b.zip"
-          unzip source.zip -d project
+        curl -L --fail -o source.zip "https://271dd665-58ff-4f87-8ec2-919453d21d8e.usrfiles.com/archives/e3fd80_581a536e7624401b8545800baee5b3c9.zip"
 
       - name: Setup Java
         uses: actions/setup-java@v4
